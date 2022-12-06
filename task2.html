@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>task two </title>
+</head>
+<body id = "body">
+    <h3> Create image node </h3>
+    
+	
+	
+	
+	
+	
+        <button onclick = "addimage()">
+            add image
+        </button>
+        <button onclick = "removeimage()">
+            remove image
+        </button>
+        
+        <div id="myImg"> </div>
+        <div id="demo"></div>
+        
+        <script>
+            
+        
+
+
+            function addimage() {
+    var img = document.createElement('img');
+    img.setAttribute('src','https://cdn.pixabay.com/photo/2018/08/14/13/23/ocean-3605547__340.jpg' )
+    document.getElementById('myImg').appendChild(img);
+    let numb = document.getElementById("myImg").children.length;
+    document.getElementById("demo").innerHTML ="The number of child nodes to the div = " + numb;
+    alert(numb);
+
+}
+
+
+function removeimage(){
+var remove = document.getElementById("myImg");
+remove.removeChild(remove.childNodes[0]);
+}
+        </script>
+
+        <style>
+           img{
+                margin: 50px;
+                width: 300px;
+                height: 300px;
+            }
+        </style>
+ 
+    
+</body>
+</html>

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>task one</title>
+</head>
+
+<body>
+    <form>
+        <label for="">full name</label><br>
+        <input type="text" required placeholder="Enter Your Name" id="fullname" onfocus="fullnamefocus()" onblur="fullnameblur()">
+        <small id="err" style="color: red; display: none;">please enter valid name </small>
+        <br>
+        <label for="">email</label><br>
+        <input type="email"required>
+        <br><br>
+        <label for="cities">Choose a city:</label>
+
+      <select>
+  <option value="aswan">aswan</option>
+  <option value="cairo">cairo</option>
+  <option value="alex">alex</option>
+</select>
+<br><br>
+<label for="">password</label><br>
+<input type="password" required id="pass" >
+
+
+<br>
+
+<label for="">confirm password</label><br>
+<input type="password" required id="confirmpass" onblur="passwordconfirmation()">
+<small id="passerr" style="color: red; display: none;">password and repeat password should be the same </small>
+<br>
+<br>
+<input type="checkbox">
+<label for=""> I accept the terms and conditions</label><br>
+
+<br>
+<input type="button" value="register" onclick="myFunction()" >
+
+    </form>
+    
+   
+    <h1 id="greeting" style="color: green;"></h1>
+</body>
+<script>
+    
+
+// function openWin() {
+//     var myWindow;
+//   myWindow = window.open('./task1-1.html'); 
+//   var fullname = document.getElementById("fullname").value;
+//     document.getElementById("greeting").innerHTML = "Hello " + fullname + " !";
+//     console.log(fullname);
+// }
+
+function myFunction() {
+    
+  var fullname = document.getElementById("fullname").value;
+    document.getElementById("greeting").innerHTML = "THANK YOU  " + fullname + " FOR REGISTRATION IN OUR WEBSITE";
+  } 
+
+function fullnamefocus(){
+    document.getElementById("fullname").style.border = "solid blue 3px";
+    
+
+}
+
+
+
+function fullnameblur(){
+    document.getElementById("fullname").style.border = "solid black 1px";
+
+    var name=document.getElementById("fullname");
+    if(name.value.length<3)
+    {
+        name.style.border="3px red solid";
+        document.getElementById("err").style.display="inline-block";
+    }
+    else
+    {
+        name.style.border="solid 1px blue";
+        document.getElementById("err").style.display="none";
+    }
+    
+
+}
+
+function passwordconfirmation(){
+    var password = document.getElementById("pass");
+    var confirm =document.getElementById("confirmpass");
+    if(password.value != confirm.value){
+
+        confirm.style.border="3px red solid";
+        document.getElementById("passerr").style.display="inline-block";
+
+    }
+    else{
+        confirm.style.border="solid 1px blue";
+        document.getElementById("passerr").style.display="none";
+
+    }
+
+}
+
+
+
+
+
+
+</script>
+</html>
